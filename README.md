@@ -57,8 +57,8 @@ to populate the database with a database dump from production (or other existing
    Mount the database dump into the container as well.
 
   ```
-  docker run --name mysqltmp -it --rm --volumes-from araport_portal_data_1 \
-      --link araport_portal_db_1:db --env-file araport.env \
+  docker run --name mysqltmp -it --rm --volumes-from araportportal_data_1 \
+      --link araportportal_db_1:db --env-file araport.env \
       -v /path/to/database.mysqldump:/database.mysqldump \
       mysql bash
   ```
@@ -80,7 +80,7 @@ If you have copies of the public/private files directories you can start a tempo
 similar as we do for MySQL data, link the data volume, and copy the files to the data volume.
 
 ```
-docker run -it --rm -v /path/to/public/files:/files --volumes-from araport_portal_data_1 ubuntu bash
+docker run -it --rm -v /path/to/public/files:/files --volumes-from araportportal_data_1 ubuntu bash
 apt-get install -y rsync
 cd /araport/sites/default/files
 rsync -avz /files/ .
