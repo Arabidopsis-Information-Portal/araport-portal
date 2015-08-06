@@ -1,0 +1,29 @@
+data:
+  image: ubuntu
+  volumes:
+    - /var/lib/mysql
+    - /araport/sites/default/files
+    - /usr/local/drupal/files
+
+db:
+  image: mysql:5.7
+  env_file: araport.env
+  volumes_from:
+    - data
+  volumes:
+    - conf/mysql:/etc/mysql/conf.d
+
+drupal:
+  build: .
+  ports:
+    - 8000:80
+  links:
+    - db
+  volumes_from:
+    - data
+  volumes:
+    - drupal:/araport
+    - logs/drupal:/var/log/drupal
+    - logs/supervisor:/var/log/supervisor
+  env_file:
+    - araport.env
