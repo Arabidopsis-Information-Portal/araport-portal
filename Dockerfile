@@ -60,6 +60,9 @@ COPY conf/nginx-araport.conf /etc/nginx/sites-enabled/default
 COPY conf/php.ini /etc/php5/fpm/php.ini
 COPY conf/php-fpm.conf /etc/php5/fpm/php-fpm.conf
 
+# bower conf
+COPY conf/bowerrc /root/.bowerrc
+
 # install drush; log dirs; nginx tuning; php tuning
 RUN \
   composer global require drush/drush:dev-master && \
