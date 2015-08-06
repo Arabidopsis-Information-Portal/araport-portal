@@ -1,0 +1,21 @@
+[submodule "drupal/sites/all/modules/custom/araport_blast"]
+	path = drupal/sites/all/modules/custom/araport_blast
+	url = https://github.com/Arabidopsis-Information-Portal/araport-blast-drupal.git
+[submodule "drupal/sites/all/modules/custom/araport_features"]
+	path = drupal/sites/all/modules/custom/araport_features
+	url = https://github.com/Arabidopsis-Information-Portal/araport_features.git
+[submodule "drupal/sites/all/modules/custom/araport_service_monitor"]
+	path = drupal/sites/all/modules/custom/araport_service_monitor
+	url = https://github.com/Arabidopsis-Information-Portal/araport_service_monitor.git
+[submodule "drupal/sites/all/modules/custom/gateway-dna-drupal"]
+	path = drupal/sites/all/modules/custom/gateway-dna-drupal
+	url = https://bitbucket.org/mrhanlon/gateway-dna-drupal.git
+[submodule "drupal/sites/all/modules/custom/iplant-datastore-connect"]
+	path = drupal/sites/all/modules/custom/iplant-datastore-connect
+	url = https://github.com/Arabidopsis-Information-Portal/iplant_datastore_connect.git
+[submodule "drupal/sites/all/modules/custom/science_apps_workspace"]
+	path = drupal/sites/all/modules/custom/science_apps_workspace
+	url = https://github.com/Arabidopsis-Information-Portal/science_apps_workspace.git
+[submodule "drupal/sites/all/themes/custom/araport_theme"]
+	path = drupal/sites/all/themes/custom/araport_theme
+	url = https://github.com/Arabidopsis-Information-Portal/araport-theme.git

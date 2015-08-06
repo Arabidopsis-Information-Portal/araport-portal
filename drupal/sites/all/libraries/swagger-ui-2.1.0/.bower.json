@@ -1,0 +1,36 @@
+{
+  "name": "swagger-ui",
+  "main": "dist/index.html",
+  "version": "2.1.0-M2",
+  "authors": [
+    "Mohsen Azimi <me@azimi.me>"
+  ],
+  "description": "Swagger UI",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "Swagger",
+    "API"
+  ],
+  "license": "Copyright 2015 Reverb Technologies, Inc.",
+  "homepage": "http://swagger.io",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "2.1.0-M2",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.1.0-M2",
+    "commit": "ba51722989859e6e4db322bde30e684c01f3098e"
+  },
+  "_source": "git://github.com/wordnik/swagger-ui.git",
+  "_target": "v2.1.0-M2",
+  "_originalSource": "swagger-ui",
+  "_direct": true
+}

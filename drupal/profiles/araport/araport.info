@@ -1,0 +1,286 @@
+name = Arabidopsis Information Portal
+description = Installtion profile to set up new AIP portal instance
+core = 7.x
+
+; ----------
+; Dependencies
+; ----------
+
+dependencies[] = backup_migrate
+dependencies[] = backup_migrate_files
+dependencies[] = media
+dependencies[] = libraries
+
+; Chaos tool suite
+dependencies[] = bulk_export
+dependencies[] = ctools
+dependencies[] = ctools_access_ruleset
+dependencies[] = ctools_custom_content
+dependencies[] = page_manager
+dependencies[] = stylizer
+dependencies[] = views_content
+
+; Chat
+dependencies[] = googlechat
+
+; Core
+dependencies[] = aggregator
+dependencies[] = block
+dependencies[] = color
+dependencies[] = comment
+dependencies[] = contextual
+dependencies[] = dashboard
+dependencies[] = dblog
+dependencies[] = field
+dependencies[] = field_sql_storage
+dependencies[] = field_ui
+dependencies[] = file
+dependencies[] = filter
+dependencies[] = help
+dependencies[] = image
+dependencies[] = list
+dependencies[] = menu
+dependencies[] = node
+dependencies[] = number
+dependencies[] = options
+dependencies[] = path
+dependencies[] = php
+dependencies[] = rdf
+dependencies[] = search
+dependencies[] = shortcut
+dependencies[] = system
+dependencies[] = taxonomy
+dependencies[] = text
+dependencies[] = toolbar
+dependencies[] = update
+dependencies[] = user
+
+; Date/Time
+dependencies[] = date
+dependencies[] = date_all_day
+dependencies[] = date_api
+dependencies[] = date_popup
+dependencies[] = date_views
+
+; Homebox
+dependencies[] = homebox
+
+; Other
+dependencies[] = advanced_help
+
+; Panels
+dependencies[] = panels
+dependencies[] = panels_ipe
+dependencies[] = panels_mini
+dependencies[] = panels_node
+
+; User interface
+dependencies[] = jquery_update
+
+; Views
+dependencies[] = views
+dependencies[] = views_ui
+
+; ----------
+; Variables
+; ----------
+variables[additional_settings__active_tab_aip_announcement] = 'edit-menu'
+variables[additional_settings__active_tab_aip_external_link] = 'edit-workflow'
+variables[additional_settings__active_tab_aip_staff_member] = 'edit-menu'
+variables[additional_settings__active_tab_api_generic_node] = 'edit-submission'
+variables[additional_settings__active_tab_api_main_page_content_blocks] = 'edit-submission'
+variables[additional_settings__active_tab_article] = 'edit-submission'
+variables[additional_settings__active_tab_conference_or_event] = 'edit-submission'
+variables[additional_settings__active_tab_page] = 'edit-submission'
+variables[additional_settings__active_tab_service_notice] = 'edit-display'
+variables[admin_theme] = 'seven'
+variables[aggregator_allowed_html_tags] = '<a> <b> <br> <dd> <dl> <dt> <em> <i> <li> <ol> <p> <strong> <u> <ul>'
+variables[aggregator_category_selector] = 'checkboxes'
+variables[aggregator_clear] = '9676800'
+variables[aggregator_summary_items] = '3'
+variables[aggregator_teaser_length] = '600'
+variables[comment_aip_announcement] = '1'
+variables[comment_aip_external_link] = '2'
+variables[comment_aip_staff_member] = '1'
+variables[comment_api_generic_node] = '1'
+variables[comment_api_main_page_content_blocks] = '1'
+variables[comment_article] = '2'
+variables[comment_conference_or_event] = '2'
+variables[comment_default_mode_aip_announcement] = 1
+variables[comment_default_mode_aip_external_link] = 1
+variables[comment_default_mode_api_generic_node] = 1
+variables[comment_default_mode_api_main_page_content_blocks] = 1
+variables[comment_default_mode_article] = 1
+variables[comment_default_mode_conference_or_event] = 1
+variables[comment_default_mode_page] = 1
+variables[comment_default_mode_service_notice] = 1
+variables[comment_default_per_page_aip_announcement] = '50'
+variables[comment_default_per_page_aip_external_link] = '50'
+variables[comment_default_per_page_aip_staff_member] = '50'
+variables[comment_default_per_page_api_generic_node] = '50'
+variables[comment_default_per_page_api_main_page_content_blocks] = '50'
+variables[comment_default_per_page_article] = '50'
+variables[comment_default_per_page_conference_or_event] = '50'
+variables[comment_default_per_page_page] = '50'
+variables[comment_default_per_page_service_notice] = '50'
+variables[comment_form_location_aip_announcement] = 1
+variables[comment_form_location_aip_external_link] = 1
+variables[comment_form_location_aip_staff_member] = 1
+variables[comment_form_location_api_generic_node] = 1
+variables[comment_form_location_api_main_page_content_blocks] = 1
+variables[comment_form_location_article] = 1
+variables[comment_form_location_conference_or_event] = 1
+variables[comment_form_location_page] = 1
+variables[comment_form_location_service_notice] = 1
+variables[comment_page] = '0'
+variables[comment_preview_aip_announcement] = '1'
+variables[comment_preview_aip_external_link] = '1'
+variables[comment_preview_aip_staff_member] = '1'
+variables[comment_preview_api_generic_node] = '1'
+variables[comment_preview_api_main_page_content_blocks] = '1'
+variables[comment_preview_article] = '1'
+variables[comment_preview_conference_or_event] = '1'
+variables[comment_preview_page] = '1'
+variables[comment_preview_service_notice] = '1'
+variables[comment_service_notice] = '1'
+variables[comment_subject_field_aip_announcement] = 1
+variables[comment_subject_field_aip_external_link] = 1
+variables[comment_subject_field_aip_staff_member] = 1
+variables[comment_subject_field_api_generic_node] = 1
+variables[comment_subject_field_api_main_page_content_blocks] = 1
+variables[comment_subject_field_article] = 1
+variables[comment_subject_field_conference_or_event] = 1
+variables[comment_subject_field_page] = 1
+variables[comment_subject_field_service_notice] = 1
+variables[configurable_timezones] = 1
+variables[date_api_version] = '7.2'
+variables[date_default_timezone] = 'America/Chicago'
+variables[date_first_day] = '0'
+variables[date_format_long] = 'l, F j, Y - H:i'
+variables[date_format_medium] = 'D, Y-m-d H:i'
+variables[date_format_short] = 'Y-m-d H:i'
+variables[default_nodes_main] = '10'
+variables[field_bundle_settings_comment__comment_node_api_main_page_content_blocks][view_modes][full][custom_settings] = false
+variables[field_bundle_settings_comment__comment_node_article][extra_fields][form][author][weight] = '-2'
+variables[field_bundle_settings_comment__comment_node_article][extra_fields][form][subject][weight] = '-1'
+variables[field_bundle_settings_node__aip_announcement][view_modes][teaser][custom_settings] = true
+variables[field_bundle_settings_node__aip_announcement][view_modes][full][custom_settings] = false
+variables[field_bundle_settings_node__aip_announcement][view_modes][rss][custom_settings] = false
+variables[field_bundle_settings_node__aip_announcement][view_modes][search_index][custom_settings] = false
+variables[field_bundle_settings_node__aip_announcement][view_modes][search_result][custom_settings] = false
+variables[field_bundle_settings_node__aip_announcement][extra_fields][form][title][weight] = '-5'
+variables[field_bundle_settings_node__aip_external_link][view_modes][teaser][custom_settings] = true
+variables[field_bundle_settings_node__aip_external_link][view_modes][full][custom_settings] = false
+variables[field_bundle_settings_node__aip_external_link][view_modes][rss][custom_settings] = false
+variables[field_bundle_settings_node__aip_external_link][view_modes][search_index][custom_settings] = false
+variables[field_bundle_settings_node__aip_external_link][view_modes][search_result][custom_settings] = false
+variables[field_bundle_settings_node__aip_external_link][extra_fields][form][title][weight] = '-5'
+variables[field_bundle_settings_node__aip_staff_member][view_modes][teaser][custom_settings] = true
+variables[field_bundle_settings_node__aip_staff_member][view_modes][full][custom_settings] = false
+variables[field_bundle_settings_node__aip_staff_member][view_modes][rss][custom_settings] = false
+variables[field_bundle_settings_node__aip_staff_member][view_modes][search_index][custom_settings] = false
+variables[field_bundle_settings_node__aip_staff_member][view_modes][search_result][custom_settings] = false
+variables[field_bundle_settings_node__aip_staff_member][extra_fields][form][title][weight] = '0'
+variables[field_bundle_settings_node__api_generic_node][view_modes][teaser][custom_settings] = true
+variables[field_bundle_settings_node__api_generic_node][view_modes][full][custom_settings] = false
+variables[field_bundle_settings_node__api_generic_node][view_modes][rss][custom_settings] = false
+variables[field_bundle_settings_node__api_generic_node][view_modes][search_index][custom_settings] = false
+variables[field_bundle_settings_node__api_generic_node][view_modes][search_result][custom_settings] = false
+variables[field_bundle_settings_node__api_generic_node][extra_fields][form][title][weight] = '-5'
+variables[field_bundle_settings_node__api_main_page_content_blocks][view_modes][teaser][custom_settings] = true
+variables[field_bundle_settings_node__api_main_page_content_blocks][view_modes][full][custom_settings] = false
+variables[field_bundle_settings_node__api_main_page_content_blocks][view_modes][rss][custom_settings] = false
+variables[field_bundle_settings_node__api_main_page_content_blocks][view_modes][search_index][custom_settings] = false
+variables[field_bundle_settings_node__api_main_page_content_blocks][view_modes][search_result][custom_settings] = false
+variables[field_bundle_settings_node__api_main_page_content_blocks][extra_fields][form][title][weight] = '-5'
+variables[field_bundle_settings_node__conference_or_event][view_modes][teaser][custom_settings] = true
+variables[field_bundle_settings_node__conference_or_event][view_modes][full][custom_settings] = false
+variables[field_bundle_settings_node__conference_or_event][view_modes][rss][custom_settings] = false
+variables[field_bundle_settings_node__conference_or_event][view_modes][search_index][custom_settings] = false
+variables[field_bundle_settings_node__conference_or_event][view_modes][search_result][custom_settings] = false
+variables[field_bundle_settings_node__conference_or_event][extra_fields][form][title][weight] = '0'
+variables[field_bundle_settings_node__service_notice][view_modes][teaser][custom_settings] = true
+variables[field_bundle_settings_node__service_notice][view_modes][full][custom_settings] = false
+variables[field_bundle_settings_node__service_notice][view_modes][rss][custom_settings] = false
+variables[field_bundle_settings_node__service_notice][view_modes][search_index][custom_settings] = false
+variables[field_bundle_settings_node__service_notice][view_modes][search_result][custom_settings] = false
+variables[field_bundle_settings_node__service_notice][extra_fields][form][title][weight] = '0'
+variables[filter_fallback_format] = 'plain_text'
+variables[image_toolkit] = 'gd'
+variables[jquery_update_compression_type] = 'min'
+variables[jquery_update_jquery_cdn] = 'google'
+variables[jquery_update_jquery_version] = '1.8'
+variables[menu_expanded][0] = 'main-menu'
+variables[menu_options_aip_announcement][0] = 'main-menu'
+variables[menu_options_aip_external_link][0] = 'main-menu'
+variables[menu_options_aip_staff_member][0] = 'main-menu'
+variables[menu_options_api_generic_node][0] = 'main-menu'
+variables[menu_options_api_main_page_content_blocks][0] = 'main-menu'
+variables[menu_options_article][0] = 'main-menu'
+variables[menu_options_conference_or_event][0] = 'main-menu'
+variables[menu_options_page][0] = 'main-menu'
+variables[menu_options_service_notice][0] = 'main-menu'
+variables[menu_parent_aip_announcement] = 'main-menu:0'
+variables[menu_parent_aip_external_link] = 'main-menu:0'
+variables[menu_parent_aip_staff_member] = 'main-menu:0'
+variables[menu_parent_api_generic_node] = 'main-menu:0'
+variables[menu_parent_api_main_page_content_blocks] = 'main-menu:0'
+variables[menu_parent_article] = 'main-menu:0'
+variables[menu_parent_conference_or_event] = 'main-menu:0'
+variables[menu_parent_page] = 'main-menu:0'
+variables[menu_parent_service_notice] = 'main-menu:0'
+variables[node_admin_theme] = '1'
+variables[node_options_aip_announcement][0] = 'status'
+variables[node_options_aip_announcement][1] = 'promote'
+variables[node_options_aip_external_link][0] = 'status'
+variables[node_options_aip_staff_member][0] = 'status'
+variables[node_options_api_generic_node][0] = 'status'
+variables[node_options_api_main_page_content_blocks][0] = 'status'
+variables[node_options_api_main_page_content_blocks][1] = 'promote'
+variables[node_options_article][0] = 'status'
+variables[node_options_article][1] = 'promote'
+variables[node_options_conference_or_event][0] = 'status'
+variables[node_options_conference_or_event][1] = 'promote'
+variables[node_options_page][0] = 'status'
+variables[node_options_service_notice][0] = 'status'
+variables[node_preview_aip_announcement] = '1'
+variables[node_preview_aip_external_link] = '1'
+variables[node_preview_aip_staff_member] = '1'
+variables[node_preview_api_generic_node] = '1'
+variables[node_preview_api_main_page_content_blocks] = '2'
+variables[node_preview_article] = '1'
+variables[node_preview_conference_or_event] = '1'
+variables[node_preview_page] = '1'
+variables[node_preview_service_notice] = '1'
+variables[node_submitted_aip_external_link] = 1
+variables[node_submitted_conference_or_event] = 1
+variables[path_alias_whitelist][node] = true
+variables[save_continue_aip_announcement] = 'Save and add fields'
+variables[save_continue_aip_external_link] = 'Save and add fields'
+variables[save_continue_aip_staff_member] = 'Save and add fields'
+variables[save_continue_api_generic_node] = 'Save and add fields'
+variables[save_continue_api_main_page_content_blocks] = 'Save and add fields'
+variables[save_continue_conference_or_event] = 'Save and add fields'
+variables[save_continue_service_notice] = 'Save and add fields'
+variables[site_frontpage] = 'frontpage'
+variables[theme_default] = 'open_framework'
+variables[update_check_frequency] = '1'
+variables[update_last_email_notification] = 1391087660
+variables[update_notification_threshold] = 'security'
+variables[user_block_max_list_count] = '20'
+variables[user_block_seconds_online] = '600'
+variables[user_default_timezone] = '0'
+variables[user_pictures] = '1'
+variables[user_picture_dimensions] = '1024x1024'
+variables[user_picture_file_size] = '800'
+variables[user_picture_style] = 'thumbnail'
+variables[user_register] = 2
+variables[views_defaults][frontpage] = false
+variables[views_defaults][archive] = false
+variables[views_defaults][taxonomy_term] = false
+
+; ------
+; Files
+; ------
+
+files[] = araport.profile
