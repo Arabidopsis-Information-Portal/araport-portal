@@ -1,4 +1,4 @@
 logs/
-files/
+/files/
 araport.env
 drupal/sites/all/libraries/science_apps_workspace
