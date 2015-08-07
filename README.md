@@ -22,8 +22,6 @@ This is a Docker container for running the Araport Portal application.
 
 1. Install [Docker][1]
 2. Install [Docker Compose][2]
-3. Setup the [environment][#environment-variables]
-4. Setup any [initial data][#getting-initial-data-into-the-container]
 
 ## Environment variables
 
