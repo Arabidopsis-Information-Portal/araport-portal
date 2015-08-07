@@ -16,6 +16,8 @@ This is a Docker container for running the Araport Portal application.
 
    `docker-compose up`
 
+4. [First run configuration](#first-run-configuration)
+
 ## Prerequisites
 
 1. Install [Docker][1]
@@ -33,25 +35,22 @@ of this file and name it `araport.env`. Then, define the following environment v
 - `MYSQL_PASSWORD` - from the `mysql` Docker container, the password to access `MYSQL_DATABASE`
 - `MYSQL_ROOT_PASSWORD` - from the `mysql` Docker container, the root password for the created MySQL instance
 
-## Getting initial data into the container
+## First run configuration
 
-If you are setting up a new instance, you'll want to get some initial data into the container, such
-as the database, public and private files, etc.
+The first time you start up the composition there are a couple of things we need to do to get everything
+to a consistent state.
 
-Once you already have a running instance it is probably easier to restore the database/files using
-the backup_migrate module.
+### Initialize the database
 
-### MySQL data
-
-If you are setting up a brand-new instance, you can probably skip this section. MySQL and Drupal will
-configure everything from scratch, simply by following the Drupal installation instructions.
-
-More likely, though, is you are setting up a secondary or development instance and you probably want
-to populate the database with a database dump from production (or other existing database location).
+Because we're setting the database configuration in `sites/default/settings.php` from the environment
+to match what we've configured for the MySQL container, Drupal will refuse to run the `install.php`
+script. (This is actually for good reasons.) So we need to initialize the database ourselves.
 
 1. Start the composition for the first time to create all the containers, in particular the data volume.
 
-   `docker-compose up`
+   ```
+   docker-compose up
+   ```
 
 2. Start a one-time mysql container and link it to the created data volume as well as the running db.
    Mount the database dump into the container as well.
@@ -63,24 +62,29 @@ to populate the database with a database dump from production (or other existing
       mysql bash
   ```
 
-3. `exec` into the container and restore from `database.mysqldump`
+3. Restore the database from the mounted dump file. We've passed in the environment variables above,
+   too, so we can just let the system substitute those for us.
 
-   `mysql -h db -u ${MYSQL_USER} -p${MYSQL_PASSWORD} ${MYSQL_DATABASE} < /database.mysqldump`
-   `exit`
+   ```
+   mysql -h db -u ${MYSQL_USER} -p${MYSQL_PASSWORD} \
+       ${MYSQL_DATABASE} < /database.mysqldump
+   exit
+   ```
 
-
-### Drupal public/private files
+### Load public/private files
 
 The Drupal public files directory `/araport/sites/default/files` and private files directory
 `/usr/local/drupal/files` are mapped to corresponding directories in the data volume. This allows us
 to persist data across containers. However, we need to be able to get data in (and out!) of the data
 volume.
 
-If you have copies of the public/private files directories you can start a temporary container,
-similar as we do for MySQL data, link the data volume, and copy the files to the data volume.
+On first run the data volume will not have these files. Assuming you have a local copy handy, we can
+start a temporary container, similar as we do for the mysql data above, and copy the files to the data
+volume.
 
 ```
-docker run -it --rm -v /path/to/public/files:/files --volumes-from araportportal_data_1 ubuntu bash
+docker run -it --rm -v /path/to/public/files:/files \
+    --volumes-from araportportal_data_1 ubuntu bash
 apt-get install -y rsync
 cd /araport/sites/default/files
 rsync -avz /files/ .
@@ -88,6 +92,32 @@ exit
 ```
 
 You can repeat this similarly for private files.
+
+### Permissions
+
+We also need to set permissions on the public and private files directories. Exec into the running
+Drupal container and change ownership to `www-data`:
+
+```
+docker exec -it araportportal_drupal_1 bash
+chown -R www-data:www-data /araport/sites/default/files
+chown -R www-data:www-data /usr/local/drupal/files
+```
+
+### Process Science Apps
+
+You may also need to process any science apps. If you synced the private files directory from an
+up-to-date copy above, you can probably skip this step.
+
+Use `docker exec` to run the `drush` commands to check and process science apps:
+
+```
+docker exec -it araportportal_drupal_1 drush saw-chk
+docker exec -it araportportal_drupal_1 drush saw-apps-proc --limit=100
+```
+
+Adjust `--limit` as necessary to process all apps, or you can just run `saw-apps-proc` multiple times
+until all apps have been processed.
 
 
 
