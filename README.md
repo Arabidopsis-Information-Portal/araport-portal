@@ -102,6 +102,13 @@ chown -R www-data:www-data /araport/sites/default/files
 chown -R www-data:www-data /usr/local/drupal/files
 ```
 
+### Clear the cache
+
+It's generally a good idea to clear the cache anytime you refresh the database or public files,
+because there is a good bit of transient data that Drupal caches in each. Refreshing the cache will
+ensure that everything is correctly discovered. This will also confirm that the permissions
+are set properly!
+
 ### Process Science Apps
 
 You may also need to process any science apps. If you synced the private files directory from an
