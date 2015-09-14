@@ -19,3 +19,6 @@
 [submodule "drupal/sites/all/themes/custom/araport_theme"]
 	path = drupal/sites/all/themes/custom/araport_theme
 	url = https://github.com/Arabidopsis-Information-Portal/araport-theme.git
+[submodule "drupal/sites/all/modules/custom/log_stdout"]
+	path = drupal/sites/all/modules/custom/log_stdout
+	url = https://github.com:mrhanlon/log_stdout.git
