@@ -7,23 +7,25 @@ data:
 
 db:
   image: mysql:5.7
+  ports:
+    - 3306:3306
   env_file: araport.env
   volumes_from:
     - data
   volumes:
-    - conf/mysql:/etc/mysql/conf.d
+    - ./conf/mysql:/etc/mysql/conf.d
 
 drupal:
   build: .
   ports:
-    - 8000:80
+    - 80:80
   links:
     - db
   volumes_from:
     - data
   volumes:
-    - drupal:/araport
-    - logs/drupal:/var/log/drupal
-    - logs/supervisor:/var/log/supervisor
+    - ./drupal:/araport
+    - ./logs/drupal:/var/log/drupal
+    - ./logs/supervisor:/var/log/supervisor
   env_file:
-    - araport.env
+    - ./araport.env
