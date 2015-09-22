@@ -15,7 +15,7 @@ CMD ["supervisord", "-n"]
 # install php and other system deps
 RUN \
   apt-get update && \
-  apt-get install -y \
+  DEBIAN_FRONTEND=noninteractive apt-get install -q -y \
     curl \
     mysql-client \
     git \
@@ -59,6 +59,13 @@ COPY conf/nginx-araport.conf /etc/nginx/sites-enabled/default
 # php conf
 COPY conf/php.ini /etc/php5/fpm/php.ini
 COPY conf/php-fpm.conf /etc/php5/fpm/php-fpm.conf
+
+# postfix conf
+RUN \
+  postconf -e 'myhostname = araport.org' && \
+  postconf -e 'mydestination = $myhostname, localhost.$myhostname, localhost'
+
+COPY conf/postfix.sh /opt/postfix.sh
 
 # bower conf
 COPY conf/bowerrc /root/.bowerrc
