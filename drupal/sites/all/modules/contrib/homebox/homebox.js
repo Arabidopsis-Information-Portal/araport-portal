@@ -34,6 +34,7 @@
         });
 
         $homebox.find('#homebox-add-link').click(function () {
+          $(this).toggleClass('active');
           $homebox.find('#homebox-add').toggle();
         });
 
@@ -271,32 +272,6 @@
           $portletHeader.attr('style', 'background: ' + color);
           $portlet.find('.homebox-portlet-inner').attr('style', 'border: 1px solid ' + color);
           Drupal.homebox.pageChanged();
-        });
-
-        // Add tooltips to icons
-        $portlet.find('.portlet-icon').tipsy({
-          gravity: 's',
-          title: function () {
-            switch ($(this).attr('class').replace('portlet-icon portlet-', '')) {
-            case 'close':
-              return Drupal.t('Close');
-            case 'maximize':
-              return Drupal.t('Maximize');
-            case 'minimize':
-              return Drupal.t('Minimize');
-            case 'minus':
-              return Drupal.t('Collapse');
-            case 'plus':
-              return Drupal.t('Expand');
-            case 'settings':
-              return Drupal.t('Settings');
-            }
-          }
-        });
-
-        // Remove tooltips on header clicks
-        $portletHeader.click(function () {
-          $('.tipsy').remove();
         });
       });
     }
