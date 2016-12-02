@@ -72,7 +72,7 @@ COPY conf/bowerrc /root/.bowerrc
 
 # install drush; log dirs; nginx tuning; php tuning
 RUN \
-  composer global require drush/drush:dev-master && \
+  composer global require drush/drush && \
   mkdir -p /var/log/drupal/nginx && \
   echo "daemon off;" >> /etc/nginx/nginx.conf && \
   printf "[Date]\ndate.timezone=America/Chicago" > /etc/php5/fpm/conf.d/20-date_timezone.ini

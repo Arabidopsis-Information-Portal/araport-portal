@@ -83,7 +83,7 @@ volume.
 ```
 docker run -it --rm -v /path/to/public/files:/files \
     --volumes-from araportportal_data_1 ubuntu bash
-apt-get install -y rsync
+apt-get update && apt-get install -y rsync
 cd /araport/sites/default/files
 rsync -avz /files/ .
 exit
